@@ -1,4 +1,7 @@
 <?php
+
+ob_start('ob_gzhandler');
+
 header('Content-type: application/json');
 
 require_once '../version.php';
