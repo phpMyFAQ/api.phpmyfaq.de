@@ -6,6 +6,8 @@ This subdomain provides informations about the latest stable and development rel
 
 ### api.phpmyfaq.de/version
 
+JSON Response:
+
     {
     
         "stable": "2.8.18",
@@ -15,6 +17,8 @@ This subdomain provides informations about the latest stable and development rel
     
 ### api.phpmyfaq.de/verify/&lt;version&gt;
 
+JSON Response:
+
     {
     
         "created": "2014-11-30 11:24:38+01:00",
@@ -22,6 +26,18 @@ This subdomain provides informations about the latest stable and development rel
         "/admin/ajax.attachment.php": "7d7297c5870fadf7c3568ecc6da8939b98124682",
         ...
     }
+    
+### api.phpmyfaq.de/version/stable
+
+JSON Response:
+
+    "2.8.18"
+
+### api.phpmyfaq.de/version/development
+
+JSON Response:
+
+    "2.9.0-alpha"
     
 ## Testing
 
