@@ -13,7 +13,7 @@ This subdomain provides informations about the latest stable and development rel
     
     }
     
-### api.phpmyfaq.de/verify/<version>
+### api.phpmyfaq.de/verify/&lt;version&gt;
 
     {
     
