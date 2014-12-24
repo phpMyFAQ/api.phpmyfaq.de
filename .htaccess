@@ -1,3 +1,7 @@
 # Rewrite rules for api.phpmyfaq.de
-RewriteRule api/version         api/version.php [L,QSA]
-RewriteRule api/verify/(.+)$    api/verify.php?version=$1 [L,QSA]
+Options +FollowSymlinks -MultiViews -Indexes
+RewriteEngine On
+RewriteBase /
+
+RewriteRule versions        /version.php [L,QSA]
+RewriteRule verify/(.+)$    /verify.php?version=$1 [L,QSA]

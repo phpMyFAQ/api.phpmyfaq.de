@@ -1,6 +1,6 @@
 <?php
 /**
- * API endpoint for api.phpmyfaq.de/verfiy/<version>
+ * API endpoint for api.phpmyfaq.de/version
  *
  *
  */
