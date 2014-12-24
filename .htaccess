@@ -1,0 +1,3 @@
+# Rewrite rules for api.phpmyfaq.de
+RewriteRule api/version         api/version.php [L,QSA]
+RewriteRule api/verify/(.+)$    api/verify.php?version=$1 [L,QSA]
