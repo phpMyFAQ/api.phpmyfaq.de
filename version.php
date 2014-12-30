@@ -1,7 +1,10 @@
 <?php
 /**
- * API endpoint for api.phpmyfaq.de/version
+ * API endpoints for
  *
+ * - api.phpmyfaq.de/versions
+ * - api.phpmyfaq.de/version/stable
+ * - api.phpmyfaq.de/version/development
  *
  */
 
@@ -25,8 +28,10 @@ switch ($branch) {
     default:
         echo json_encode(
             [
-                'stable'      => PHPMYFAQ_STABLE_VERSION,
-                'development' => PHPMYFAQ_DEV_VERSION
+                'stable'               => PHPMYFAQ_STABLE_VERSION,
+                'stable_released'      => PHPMYFAQ_STABLE_RELEASE,
+                'development'          => PHPMYFAQ_DEV_VERSION,
+                'development_released' => PHPMYFAQ_DEV_RELEASE
             ]
         );
         break;

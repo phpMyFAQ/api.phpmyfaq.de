@@ -4,14 +4,16 @@ This subdomain provides informations about the latest stable and development rel
 
 ## API endpoints
 
-### api.phpmyfaq.de/version
+### api.phpmyfaq.de/versions
 
 JSON Response:
 
     {
     
         "stable": "2.8.18",
-        "development": "2.9.0-alpha"
+        "stable_released": "2014-11-30",
+        "development": "2.9.0-alpha",
+        "development_released": "2014-08-12"
     
     }
     
@@ -45,7 +47,7 @@ Just use the built-in webserver from PHP:
  
     $ php -S localhost:3000
     
-Routes:
+Requests:
 
     http://localhost:3000/index.php
     http://localhost:3000/version.php
