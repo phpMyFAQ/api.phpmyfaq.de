@@ -1,9 +1,21 @@
-# Rewrite rules for api.phpmyfaq.de
 Options +FollowSymlinks -MultiViews -Indexes
-RewriteEngine On
-RewriteBase /
 
-RewriteRule versions            /version.php [L,QSA]
-RewriteRule version/stable      /version.php?branch=stable
-RewriteRule version/development /version.php?branch=development
-RewriteRule verify/(.+)$        /verify.php?version=$1 [L,QSA]
+# ----------------------------------------------------------------------
+# | Cross-origin requests for api.phpmyfaq.de                          |
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Rewrite rules for api.phpmyfaq.de                                  |
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteRule versions            /version.php [L,QSA]
+    RewriteRule version/stable      /version.php?branch=stable
+    RewriteRule version/development /version.php?branch=development
+    RewriteRule verify/(.+)$        /verify.php?version=$1 [L,QSA]
+</IfModule>
