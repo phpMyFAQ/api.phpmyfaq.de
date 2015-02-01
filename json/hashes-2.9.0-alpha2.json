@@ -1,0 +1,7 @@
+
+Fatal error: Uncaught exception 'Exception' with message 'DateTime::__construct(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.' in /Users/thorsten/htdocs/phpMyFAQ-2.9/phpmyfaq/inc/PMF/System.php:346
+Stack trace:
+#0 /Users/thorsten/htdocs/phpMyFAQ-2.9/phpmyfaq/inc/PMF/System.php(346): DateTime->__construct()
+#1 /Users/thorsten/htdocs/phpMyFAQ-2.9/scripts/createHashes.php(28): PMF_System->createHashes()
+#2 {main}
+  thrown in /Users/thorsten/htdocs/phpMyFAQ-2.9/phpmyfaq/inc/PMF/System.php on line 346
