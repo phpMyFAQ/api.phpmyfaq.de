@@ -4,7 +4,7 @@
  *
  */
 
-define('PHPMYFAQ_STABLE_VERSION', '2.8.24');
-define('PHPMYFAQ_STABLE_RELEASE', '2015-07-27');
-define('PHPMYFAQ_DEV_VERSION',    '2.9.0-alpha4');
-define('PHPMYFAQ_DEV_RELEASE',    '2015-09-22');
+define('PHPMYFAQ_STABLE_VERSION', '2.8.25');
+define('PHPMYFAQ_STABLE_RELEASE', '2015-12-05');
+define('PHPMYFAQ_DEV_VERSION',    '2.9.0-beta');
+define('PHPMYFAQ_DEV_RELEASE',    '2015-12-05');
