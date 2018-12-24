@@ -1,6 +1,7 @@
 # api.phpmyfaq.de
 
-This subdomain provides informations about the latest stable and development releases from [phpMyFAQ](http://www.phpmyfaq.de).
+This sub domain provides information about the latest stable and development releases from 
+[phpMyFAQ](https://www.phpmyfaq.de).
 
 ## API endpoints
 
@@ -43,7 +44,7 @@ JSON Response:
     
 ## Testing
 
-Just use the built-in webserver from PHP:
+Just use the built-in web server from PHP:
  
     $ php -S localhost:3000
     
@@ -57,4 +58,4 @@ Requests:
 
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
-Copyright (c) 2014 Thorsten Rinne
+Copyright (c) 2014-2018 Thorsten Rinne
