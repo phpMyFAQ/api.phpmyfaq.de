@@ -14,8 +14,8 @@ Options +FollowSymlinks -MultiViews -Indexes
     RewriteEngine On
     RewriteBase /
 
-    RewriteRule versions            /version.php [L,QSA]
+    RewriteRule versions            /version.php
     RewriteRule version/stable      /version.php?branch=stable
     RewriteRule version/development /version.php?branch=development
-    RewriteRule verify/(.+)$        /verify.php?version=$1 [L,QSA]
+    RewriteRule verify/(.+)$        /verify.php?version=$1
 </IfModule>
