@@ -20,5 +20,6 @@ Options +FollowSymlinks -MultiViews -Indexes
     RewriteRule versions            /version.php
     RewriteRule version/stable      /version.php?branch=stable
     RewriteRule version/development /version.php?branch=development
+    RewriteRule version/nightly     /version.php?branch=nightly
     RewriteRule verify/(.+)$        /verify.php?version=$1
 </IfModule>

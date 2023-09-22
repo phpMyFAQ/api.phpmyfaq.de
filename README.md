@@ -10,12 +10,12 @@ This subdomain provides information about the latest stable and development rele
 JSON Response:
 
     {
-
-        "stable": "2.8.18",
-        "stable_released": "2014-11-30",
-        "development": "2.9.0-alpha",
-        "development_released": "2014-08-12"
-
+        "stable": "3.2.1",
+        "stable_released": "2023-09-21",
+        "development": "4.0.0-alpha",
+        "development_released": "2023-09-21"
+        "nightly: "2023-09-21",
+        "nightly_released: "2023-09-21"
     }
 
 ### api.phpmyfaq.de/verify/&lt;version&gt;
@@ -23,7 +23,6 @@ JSON Response:
 JSON Response:
 
     {
-
         "created": "2014-11-30 11:24:38+01:00",
         "/add.php": "079e1ebf846535c45205cba1f66cedc16d8b9d7b",
         "/admin/ajax.attachment.php": "7d7297c5870fadf7c3568ecc6da8939b98124682",
@@ -34,13 +33,19 @@ JSON Response:
 
 JSON Response:
 
-    "2.8.18"
+    "3.2.1"
 
 ### api.phpmyfaq.de/version/development
 
 JSON Response:
 
-    "2.9.0-alpha"
+    "4.0.0-alpha"
+
+### api.phpmyfaq.de/version/nightly
+
+JSON Response:
+
+    "nightly-4.0.0-alpha"
 
 ## Testing
 
@@ -58,4 +63,4 @@ Requests:
 
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
-Copyright (c) 2014-2022 Thorsten Rinne
+Copyright © 2014-2023 Thorsten Rinne
