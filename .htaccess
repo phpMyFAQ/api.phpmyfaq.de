@@ -8,6 +8,8 @@ Options +FollowSymlinks -MultiViews -Indexes
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "origin, content-type, accept"
 </IfModule>
 
 # ----------------------------------------------------------------------
