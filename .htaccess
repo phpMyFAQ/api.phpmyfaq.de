@@ -4,26 +4,30 @@
 Options +FollowSymlinks -MultiViews -Indexes
 
 # ----------------------------------------------------------------------
-# | Cross-origin requests for api.phpmyfaq.de                          |
-# ----------------------------------------------------------------------
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
-    Header set Access-Control-Allow-Headers "origin, content-type, accept, x-requested-with"
-</IfModule>
-
-# ----------------------------------------------------------------------
 # | Rewrite rules for api.phpmyfaq.de                                  |
 # ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_METHOD} OPTIONS
     RewriteBase /
 
-    RewriteRule ^(.*)$ $1 [R=200,L]
-    RewriteRule versions            /version.php
-    RewriteRule version/stable      /version.php?branch=stable
-    RewriteRule version/development /version.php?branch=development
-    RewriteRule version/nightly     /version.php?branch=nightly
-    RewriteRule verify/(.+)$        /verify.php?version=$1
+    # Handle preflight OPTIONS requests
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^ - [R=204,L]
+
+    # Existing rewrite rules
+    RewriteRule ^versions$            /version.php [L]
+    RewriteRule ^version/stable$      /version.php?branch=stable [L]
+    RewriteRule ^version/development$ /version.php?branch=development [L]
+    RewriteRule ^version/nightly$     /version.php?branch=nightly [L]
+    RewriteRule ^verify/(.+)$         /verify.php?version=$1 [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin requests for api.phpmyfaq.de                          |
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "origin, content-type, accept, x-requested-with"
+    Header always set Access-Control-Max-Age "3600"
 </IfModule>
