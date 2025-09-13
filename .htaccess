@@ -4,22 +4,19 @@
 Options +FollowSymlinks -MultiViews -Indexes
 
 # ----------------------------------------------------------------------
-# | Rewrite rules for api.phpmyfaq.de                                  |
+# | Redirect all requests to public/ (Front Controller)                |
 # ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # Handle preflight OPTIONS requests
+    # Handle preflight OPTIONS requests early
     RewriteCond %{REQUEST_METHOD} OPTIONS
     RewriteRule ^ - [R=204,L]
 
-    # Existing rewrite rules
-    RewriteRule ^versions$            /version.php [L]
-    RewriteRule ^version/stable$      /version.php?branch=stable [L]
-    RewriteRule ^version/development$ /version.php?branch=development [L]
-    RewriteRule ^version/nightly$     /version.php?branch=nightly [L]
-    RewriteRule ^verify/(.+)$         /verify.php?version=$1 [L]
+    # Send everything to public/, keep existing paths
+    RewriteRule ^public/ - [L]
+    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 
 # ----------------------------------------------------------------------

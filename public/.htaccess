@@ -1,0 +1,25 @@
+# Use Apache rewrite to send all requests to index.php (Front Controller)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Serve existing files directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Preflight early return (falls Root nicht greift)
+    RewriteCond %{REQUEST_METHOD} =OPTIONS
+    RewriteRule ^ - [R=204,L]
+
+    # Otherwise route everything to index.php
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# CORS headers (defensive duplicate to root settings)
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "origin, content-type, accept, x-requested-with"
+    Header always set Access-Control-Max-Age "3600"
+</IfModule>
+

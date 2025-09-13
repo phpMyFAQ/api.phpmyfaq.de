@@ -18,7 +18,7 @@ JSON Response:
         "nightly_released: "2023-09-21"
     }
 
-### api.phpmyfaq.de/verify/&lt;version&gt;
+### api.phpmyfaq.de/verify/<version>
 
 JSON Response:
 
@@ -64,3 +64,40 @@ Requests:
 Mozilla Public License 2.0, see LICENSE.md for more information.
 
 Copyright © 2014-2023 Thorsten Rinne
+
+
+<!-- Added: Symfony-like lightweight front controller + routing -->
+
+## Lightweight Symfony-based front controller
+
+- Front controller: `public/index.php` using `symfony/http-foundation` and `symfony/routing`.
+- Controller: `src/Controller/ApiController.php` implements all endpoints.
+- Apache rewrites: root `.htaccess` forwards all requests to `public/`, and `public/.htaccess` routes to the front controller.
+- CORS support: default `Access-Control-*` headers and `OPTIONS` preflight handling.
+
+### Requirements
+- PHP >= 8.2
+
+### Local run
+Install deps and start a local server:
+
+```bash
+composer install
+composer serve
+# or
+php -S 127.0.0.1:3000 -t public public/index.php
+```
+
+Try:
+
+```bash
+curl http://127.0.0.1:3000/
+curl http://127.0.0.1:3000/versions
+curl http://127.0.0.1:3000/version/stable
+curl "http://127.0.0.1:3000/verify/2.8.18"
+```
+
+### Notes
+- Nightly value is generated as `nightly-<yesterday>`; its release date equals yesterday.
+- `verify` responds with 418 for missing or invalid versions.
+- CORS headers are always present; `OPTIONS` returns 204.
