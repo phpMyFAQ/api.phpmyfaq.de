@@ -12,7 +12,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": ">=8.4",
+    "php": ">=8.3",
     "symfony/http-foundation": "^7.3",
     "symfony/routing": "^7.3",
     "symfony/framework-bundle": "^7.3"
