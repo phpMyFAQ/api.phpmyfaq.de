@@ -9,7 +9,6 @@
       "email": "thorsten@phpmyfaq.de"
     }
   ],
-  "version": "1.0.0",
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
