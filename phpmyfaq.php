@@ -1,7 +1,7 @@
 <?php
 /** phpMyFAQ versions + release dates */
 
-const PHPMYFAQ_STABLE_VERSION = '4.1.4';
-const PHPMYFAQ_STABLE_RELEASE = '2026-05-25';
+const PHPMYFAQ_STABLE_VERSION = '4.1.5';
+const PHPMYFAQ_STABLE_RELEASE = '2026-06-14';
 const PHPMYFAQ_DEV_VERSION = '4.1.0-RC.7';
 const PHPMYFAQ_DEV_RELEASE = '2026-02-27';
